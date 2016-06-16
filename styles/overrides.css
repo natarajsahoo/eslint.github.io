@@ -208,7 +208,7 @@ main li p ~ ul {
   margin-left: 0; /* not centered */
   margin-right: 0; /* not centered */
   padding-left: 3em;
-  padding-right: 0.5em;
+  padding-right: 1em;
 }
 
 main .container {
@@ -219,7 +219,7 @@ main .container {
 #markdown-toc {
   position: absolute;
   top: auto; /* aligned at the top of paragraph of content which follows in document order */
-  left: 51em; /* 2 padding + 43 content + 6 gutter */
+  left: 52em; /* 3 padding + 43 content + 6 gutter */
   white-space: nowrap;
   padding-left: 0;
 }
@@ -244,7 +244,7 @@ pre {
   font-size: 15px; /* for similar chars/line as text font */
   word-break: normal; /* do not break a line within an ordinary word */
   word-wrap: break-word; /* break an "unbreakable" word only if there are no otherwise-acceptable break points */
-  padding: 12px 2px; /* vertical same as margin-bottom of p and horizontal same as padding of code */
+  padding: 12px 4px; /* vertical same as margin-bottom of p and horizontal same as padding of code */
   border-width: 1px;
   border-color: #ccc; /* hsl(0,0%,80%) light gray */
   border-top-style: solid;
@@ -280,8 +280,14 @@ main h1, main h2, main h3, main h4, main p, main ol, main ul, main table, main d
 @media (max-width: 1023px) { /* less than 1024px */
 
   .container {
-    padding-left: 2em; /* padding-right plus negative left position of glyphicon in margin */
+    padding-left: 2em; /* 0.5em plus negative left position of glyphicon in margin */
   }
+
+}
+
+/* breakpoint is based on content and rounded up to device size */
+/* 1020px = 17 px/em * (3 padding + 43 content + 6 gutter + 8 toc) em */
+@media (max-width: 1024px) { /* less than or equal to 1024px */
 
   #markdown-toc {
     display: none;
@@ -294,7 +300,7 @@ main h1, main h2, main h3, main h4, main p, main ol, main ul, main table, main d
 @media (max-width: 767px) { /* width less than 768px */
 
   .container {
-    padding-left: 0.5em; /* same as padding-right */
+    padding-left: 1em; /* same as padding-right */
   }
 
   p.icon:before {
